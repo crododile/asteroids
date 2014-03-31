@@ -9,12 +9,7 @@
   }
 
 
-
-
   Ship.inherits(Asteroids.MovingObject);
-
-
-
 
 
   Ship.prototype.power = function(impulse){

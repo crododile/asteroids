@@ -83,7 +83,7 @@
   Game.prototype.stop = function(){
     var game = this;
     clearInterval(game.interval)
-	alert('game over, try again!')
+
     gam3 = new Asteroids.Game(canvas,500, 500)
     gam3.start(8);
   }
