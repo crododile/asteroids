@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Asteroids</title>
+    <title>Hard asteroids</title>
 </head>
 <body>
-    <canvas width="500" height="500" style="background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTKQ1oq7MXK5IBu2kq7IbPO0Uan2Dnw0uyFI3gTePEQL_zYCon8w')"></canvas>
+
+	<h1> awsd to move, careful, the speed grows quickly; so do the asteroids; hold space to fire! have fun! </h1>
+    <canvas width="500" height="500" style="background: url('http://www.hdwallpapers.in/wallpapers/christmas_volcano-1920x1200.jpg')"></canvas>
 
     <script src="game.js"></script>
     <script src='moving_object.js'></script>
@@ -17,7 +19,7 @@
         var canvas = document.getElementsByTagName("canvas")[0];
 
         var gam3 = new Asteroids.Game(canvas,500, 500)
-        gam3.start(3);
+        gam3.start(8);
 
     </script>
 </body>

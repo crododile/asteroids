@@ -3,7 +3,7 @@
 
   var Bullet = Asteroids.Bullet = function(){
     Asteroids.MovingObject.apply(this, arguments);
-    this.color = 'black'
+    this.color = 'green'
     this.radius = 2;
   }
 

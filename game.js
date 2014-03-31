@@ -19,6 +19,7 @@
   Game.prototype.addAsteroids = function(num) {
     for (var i = 0; i< num; i++){
       this.asteroids.push(Asteroids.Asteroid.prototype.randomAsteroid(this.width, this.height));
+	  
     }
   }
 
@@ -27,8 +28,11 @@
     var until = game.asteroids.length
     for (var j = 0; j < until; j++){
       if (game.asteroids[j].isCollidedWith(game.ship)){
-        alert('game over!');
-        game.stop();
+		
+		game.asteroids= [];
+		game.stop();
+
+		
       }
       for(var i =0; i < game.bullets.length; i ++){
         if (game.asteroids[j].isCollidedWith(game.bullets[i])){
@@ -37,9 +41,9 @@
           var newstroids = game.asteroids[j].multiply();
           game.asteroids.splice(j,1);
           j++
-          console.log(newstroids)
+
           game.asteroids =  game.asteroids.concat(newstroids);
-          console.log(game.asteroids.length);
+
         }
       }
     }
@@ -79,11 +83,14 @@
   Game.prototype.stop = function(){
     var game = this;
     clearInterval(game.interval)
+	alert('game over, try again!')
+    gam3 = new Asteroids.Game(canvas,500, 500)
+    gam3.start(8);
   }
 
   Game.prototype.bindKeyHandlers = function(){
     var game = this;
-    //key('a', function() { this.ship.power([-1,0])});
+    // key('a', function() { game.ship.power([-1,0])});
     // key('w', function() { game.ship.power([0,-1])});
     // key('s', function() { game.ship.power([0,1])});
     // key('d', function() { game.ship.power([1,0])});
@@ -133,7 +140,7 @@
 
   Game.prototype.start = function(numAsteroids){
     this.addAsteroids(numAsteroids);
-     this.bindKeyHandlers();
+     // this.bindKeyHandlers();
     var game = this;
     this.interval = setInterval(function(){game.step()}, 50);
   }

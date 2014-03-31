@@ -11,7 +11,7 @@
 
   Asteroid.prototype.randomAsteroid = function(dimX, dimY){
     var center = [Math.random()*dimX, Math.random()*dimY];
-    var radius = (Math.random()*60) + 10;
+    var radius = (Math.random()*50 + 10);
     var vel = [(Math.random() - .5)*7.5,(Math.random() - .5 )*7.5];
     return new Asteroid(center, vel, radius)
   }
@@ -24,9 +24,8 @@
     var startPos = [asteroid.pos[0]+5, asteroid.pos[1]+7]
 
     for(var i =0 ; i < toProduce; i++ ){
-      vel = [(Math.random() - .5)*7.5,(Math.random() - .5 )*7.5];
       array.push(new Asteroid(startPos, vel, asteroid.radius - 4))
-      debugger
+
       }
     return array
   }
