@@ -18,37 +18,21 @@
     }
 
     MovingObject.prototype.draw = function(ctx){
-      ctx.strokeStyle = this.color;
+      ctx.fillStyle = this.color;
       ctx.beginPath();
 	  
 	  ctx.moveTo( this.pos[0] , this.pos[1] );
   
-
-	  // ctx.lineTo(
-	  // 		  (this.pos[0] + ( Math.sin(this.deg) ) ),
-	  // 		  (this.pos[1] + ( Math.cos(this.deg) ) )
-	  // );
-	  // 	
-	  this.deg += 0.1;
-
-  	  // ctx.moveTo( this.pos[0] , this.pos[1] );
-  // 	  
-      // ctx.arc(
- //        this.pos[0],
- //        this.pos[1],
- //        this.radius,
- //        0,
- //        2*Math.PI,
- //        false
- //      );
+      ctx.arc(
+        this.pos[0],
+        this.pos[1],
+        this.radius,
+        0,
+        2*Math.PI,
+        false
+      );
    
-      ctx.stroke();
-	  for (var i = 0; i < 25; i++ ){
-		   ctx.moveTo( this.pos[0] , this.pos[1] );
-		   ctx.lineTo(this.pos[0] + Math.cos(this.deg*i)*this.radius,
-		   this.pos[1] + Math.sin(this.deg*i)*this.radius)
-		   ctx.stroke()
-         }
+      ctx.fill();
     };
 
     MovingObject.prototype.isCollidedWith = function(otherObject){

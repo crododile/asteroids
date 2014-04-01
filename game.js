@@ -84,18 +84,10 @@
     var game = this;
     clearInterval(game.interval)
 
-    gam3 = new Asteroids.Game(canvas,500, 500)
+    gam3 = new Asteroids.Game(canvas,600, 600)
     gam3.start(8);
   }
 
-  Game.prototype.bindKeyHandlers = function(){
-    var game = this;
-    // key('a', function() { game.ship.power([-1,0])});
-    // key('w', function() { game.ship.power([0,-1])});
-    // key('s', function() { game.ship.power([0,1])});
-    // key('d', function() { game.ship.power([1,0])});
-    // key('space', function(){  game.fireBullet()});
-  }
 
   Game.prototype.draw = function(){
     var context = this.ctx;
@@ -116,7 +108,7 @@
     this.asteroids.forEach(function(ast){
       ast.move();
     });
-    //console.log(this.ship.vel)
+
     this.ship.move();
 
     this.bullets.forEach(function(bullet){
@@ -135,14 +127,12 @@
     this.move();
     this.draw();
     this.migrateOldstroids();
-  
   }
 
   Game.prototype.start = function(numAsteroids){
     this.addAsteroids(numAsteroids);
-     // this.bindKeyHandlers();
     var game = this;
-    this.interval = setInterval(function(){game.step()}, 50);
+    this.interval = setInterval(function(){game.step()}, 100);
   }
 
 })(this);
