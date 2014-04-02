@@ -26,17 +26,18 @@
       this.deg *= 1.01
 	  for (var i = 0; i < 15; i++ ){
 		   ctx.moveTo( this.pos[0] , this.pos[1] );
+		   ctx.lineCap = 'round'
 		   ctx.lineTo(this.pos[0] + Math.cos(this.deg*i)*this.radius,
 		   this.pos[1] + Math.sin(this.deg*i)*this.radius )
-		   ctx.arc(
-			   this.pos[0] + Math.cos(this.deg*i)*this.radius,
-			   this.pos[1] + Math.sin(this.deg*i)*this.radius,
-			   4,
-			   0,
-			   2*Math.PI,
-			   false 
-		   )
-		   ctx.stroke()
+ 		   ctx.arc(
+ 	   			   this.pos[0] + Math.cos(this.deg*i)*this.radius,
+ 	   			   this.pos[1] + Math.sin(this.deg*i)*this.radius,
+ 	   			   4,
+ 	   			   0,
+ 	   			   Math.PI* this.deg,
+ 	   			   false 
+ 	   		   )
+ 		   ctx.stroke()
          }
   }
 

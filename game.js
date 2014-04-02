@@ -60,6 +60,15 @@
       return false
     } else {return true}
   }
+  
+  Game.prototype.removeOldBullets = function(){
+	  var game = this;
+	  for (var i=0; i < game.bullets.length; i++){
+		  if(!game.inFrame(game.bullets[i])){
+			  game.bullets.splice(i,1);
+		  };
+	  }
+  }
 
   Game.prototype.migrateOldstroids = function(){
     var game = this
@@ -127,6 +136,7 @@
     this.move();
     this.draw();
     this.migrateOldstroids();
+	this.removeOldBullets();
   }
 
   Game.prototype.start = function(numAsteroids){
