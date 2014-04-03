@@ -3,8 +3,9 @@
 
   var Asteroid = Asteroids.Asteroid = function Asteroid(){
     Asteroids.MovingObject.apply(this, arguments);
-	colors = ['blue','purple','white','orange']
+	this.colors = colors = ['blue','purple','white','orange']
     this.color = colors[Math.floor(Math.random()*colors.length)];
+	this.stroke = colors[Math.floor(Math.random()*colors.length)];
 	this.deg = 0.45
   }
 
@@ -24,6 +25,7 @@
 	  
 	  ctx.moveTo( this.pos[0] , this.pos[1] );
       this.deg *= 1.01
+	  if (this.radius < 24dd ){
 	  for (var i = 0; i < 15; i++ ){
 		   ctx.moveTo( this.pos[0] , this.pos[1] );
 		   ctx.lineTo(this.pos[0] + Math.cos(this.deg*i)*this.radius,
@@ -36,8 +38,36 @@
 			   2*Math.PI,
 			   false 
 		   )
-		   ctx.stroke()
+		   	 ctx.stroke()
+
          }
+	 } else {
+   	  for (var i = 0; i < 15; i++ ){
+		  ctx.fillStyle = this.color;
+		  ctx.strokeStyle = 'blue';
+		  
+   		   ctx.moveTo( this.pos[0] , this.pos[1] );
+   		   ctx.quadraticCurveTo(
+		   this.pos[0] + Math.cos(this.deg*i*1.01)*this.radius,
+		   this.pos[1] + Math.sin(this.deg*i*1.01)*this.radius,
+		   this.pos[0] + Math.cos(this.deg*i)*this.radius,
+   		   this.pos[1] + Math.sin(this.deg*i)*this.radius )
+		   
+   		   ctx.quadraticCurveTo(
+		   this.pos[0] + Math.cos(this.deg*i/1.1)*this.radius,
+		   this.pos[1] + Math.sin(this.deg*i/1.1)*this.radius,
+		   this.pos[0] ,
+   		   this.pos[1] )
+   	
+   		   	 ctx.fill()
+		
+            }
+		
+		
+		
+		
+		
+	 }
   }
 
   Asteroid.prototype.multiply = function(){
