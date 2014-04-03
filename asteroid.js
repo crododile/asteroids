@@ -25,7 +25,7 @@
 	  
 	  ctx.moveTo( this.pos[0] , this.pos[1] );
       this.deg *= 1.01
-	  if (this.radius < 24dd ){
+	  if (this.radius < 24 ){
 	  for (var i = 0; i < 15; i++ ){
 		   ctx.moveTo( this.pos[0] , this.pos[1] );
 		   ctx.lineTo(this.pos[0] + Math.cos(this.deg*i)*this.radius,
