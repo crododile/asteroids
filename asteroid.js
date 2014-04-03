@@ -51,22 +51,16 @@
 		   this.pos[0] + Math.cos(this.deg*i*1.01)*this.radius,
 		   this.pos[1] + Math.sin(this.deg*i*1.01)*this.radius,
 		   this.pos[0] + Math.cos(this.deg*i)*this.radius,
-   		   this.pos[1] + Math.sin(this.deg*i)*this.radius )
+   		   this.pos[1] + Math.sin(this.deg*i)*this.radius );
 		   
    		   ctx.quadraticCurveTo(
 		   this.pos[0] + Math.cos(this.deg*i/1.1)*this.radius,
 		   this.pos[1] + Math.sin(this.deg*i/1.1)*this.radius,
 		   this.pos[0] ,
-   		   this.pos[1] )
+   		   this.pos[1] );
    	
-   		   	 ctx.fill()
-		
+   		   	 ctx.fill();
             }
-		
-		
-		
-		
-		
 	 }
   }
 
