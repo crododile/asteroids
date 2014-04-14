@@ -58,7 +58,7 @@
 		   this.pos[1] + Math.sin(this.deg*i/1.1)*this.radius,
 		   this.pos[0] ,
    		   this.pos[1] );
-   	
+   		   ctx.stroke();
    		   	 ctx.fill();
             }
 	 }
