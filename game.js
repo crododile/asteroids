@@ -11,7 +11,7 @@
     this.bullets = [];
     this.interval;
 
-    this.fps = 30;
+    this.fps = 20;
   }
 
 
